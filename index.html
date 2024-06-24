@@ -30,7 +30,21 @@
             gap: 5px;
         }
         .checkbox-group input {
-            accent-color: #ffffff;
+            display: none;
+        }
+        .checkbox-group label {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .checkbox-group input:checked + label::before {
+            content: "X";
+            color: #ffffff;
         }
     </style>
 </head>
@@ -40,75 +54,61 @@
         <div class="slot">
             <label for="1st-1">1st:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="1st-1">
-                <input type="checkbox" id="1st-2">
-                <input type="checkbox" id="1st-3">
-                <input type="checkbox" id="1st-4">
-                <input type="checkbox" id="1st-5">
+                <input type="checkbox" id="1st-1"><label for="1st-1"></label>
+                <input type="checkbox" id="1st-2"><label for="1st-2"></label>
+                <input type="checkbox" id="1st-3"><label for="1st-3"></label>
+                <input type="checkbox" id="1st-4"><label for="1st-4"></label>
             </div>
         </div>
         <div class="slot">
             <label for="2nd-1">2nd:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="2nd-1">
-                <input type="checkbox" id="2nd-2">
-                <input type="checkbox" id="2nd-3">
-                <input type="checkbox" id="2nd-4">
-                <input type="checkbox" id="2nd-5">
+                <input type="checkbox" id="2nd-1"><label for="2nd-1"></label>
+                <input type="checkbox" id="2nd-2"><label for="2nd-2"></label>
+                <input type="checkbox" id="2nd-3"><label for="2nd-3"></label>
             </div>
         </div>
         <div class="slot">
             <label for="3rd-1">3rd:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="3rd-1">
-                <input type="checkbox" id="3rd-2">
-                <input type="checkbox" id="3rd-3">
-                <input type="checkbox" id="3rd-4">
-                <input type="checkbox" id="3rd-5">
+                <input type="checkbox" id="3rd-1"><label for="3rd-1"></label>
+                <input type="checkbox" id="3rd-2"><label for="3rd-2"></label>
+                <input type="checkbox" id="3rd-3"><label for="3rd-3"></label>
             </div>
         </div>
         <div class="slot">
             <label for="4th-1">4th:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="4th-1">
-                <input type="checkbox" id="4th-2">
-                <input type="checkbox" id="4th-3">
-                <input type="checkbox" id="4th-4">
-                <input type="checkbox" id="4th-5">
+                <input type="checkbox" id="4th-1"><label for="4th-1"></label>
+                <input type="checkbox" id="4th-2"><label for="4th-2"></label>
+                <input type="checkbox" id="4th-3"><label for="4th-3"></label>
             </div>
         </div>
         <div class="slot">
             <label for="5th-1">5th:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="5th-1">
+                <input type="checkbox" id="5th-1"><label for="5th-1"></label>
+                <input type="checkbox" id="5th-2"><label for="5th-2"></label>
             </div>
         </div>
         <div class="slot">
             <label for="6th-1">6th:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="6th-1">
+                <input type="checkbox" id="6th-1"><label for="6th-1"></label>
             </div>
         </div>
         <div class="slot">
             <label for="7th-1">7th:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="7th-1">
+                <input type="checkbox" id="7th-1"><label for="7th-1"></label>
             </div>
         </div>
         <div class="slot">
             <label for="8th-1">8th:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="8th-1">
+                <input type="checkbox" id="8th-1"><label for="8th-1"></label>
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                this.classList.toggle('checked', this.checked);
-            });
-        });
-    </script>
 </body>
 </html>
-
