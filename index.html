@@ -34,27 +34,27 @@
             display: flex; /* Use flexbox to align radio buttons horizontally */
             gap: 5px; /* Space between each radio button */
         }
-        /* Hide the default radio button */
-        .radio-group input {
-            display: none; /* Hide the actual radio button input */
-        }
-        /* Style for the custom radio button label */
-        .radio-group label {
-            width: 30px; /* Width of the custom radio button */
-            height: 30px; /* Height of the custom radio button */
-            border: 1px solid #ffffff; /* Border color and size */
+        /* Style for custom radio buttons */
+        .radio-group input[type="radio"] {
+            appearance: none; /* Remove default radio button appearance */
+            width: 20px; /* Width of the custom radio button */
+            height: 20px; /* Height of the custom radio button */
+            border: 2px solid #ffffff; /* Border color and size */
+            border-radius: 50%; /* Make it a circle */
             display: flex; /* Use flexbox to center content */
             align-items: center; /* Center items vertically */
             justify-content: center; /* Center items horizontally */
             cursor: pointer; /* Change cursor to pointer on hover */
-            user-select: none; /* Prevent text selection */
-            font-size: 20px; /* Font size for the "X" */
-            line-height: 30px; /* Line height to center "X" vertically */
+            position: relative; /* For the dot positioning */
         }
-        /* Style for the "X" inside the custom radio button when selected */
-        .radio-group input:checked + label::before {
-            content: "X"; /* Content to display */
-            color: #ffffff; /* Color of the "X" */
+        /* Style for the dot inside the custom radio button when selected */
+        .radio-group input[type="radio"]:checked::before {
+            content: ""; /* Empty content for the dot */
+            width: 10px; /* Width of the dot */
+            height: 10px; /* Height of the dot */
+            border-radius: 50%; /* Make it a circle */
+            background-color: #ffffff; /* Color of the dot */
+            position: absolute; /* Position it inside the radio button */
         }
     </style>
 </head>
@@ -66,72 +66,72 @@
             <label for="1st-1">1st:</label>
             <div class="radio-group">
                 <!-- Custom radio button with hidden input and label -->
-                <input type="radio" id="1st-1" name="1st"><label for="1st-1"></label>
-                <input type="radio" id="1st-2" name="1st"><label for="1st-2"></label>
-                <input type="radio" id="1st-3" name="1st"><label for="1st-3"></label>
-                <input type="radio" id="1st-4" name="1st"><label for="1st-4"></label>
-                <input type="radio" id="1st-5" name="1st"><label for="1st-5"></label>
+                <input type="radio" id="1st-1" name="1st">
+                <input type="radio" id="1st-2" name="1st">
+                <input type="radio" id="1st-3" name="1st">
+                <input type="radio" id="1st-4" name="1st">
+                <input type="radio" id="1st-5" name="1st">
             </div>
         </div>
         <!-- Slot for 2nd level spells -->
         <div class="slot">
             <label for="2nd-1">2nd:</label>
             <div class="radio-group">
-                <input type="radio" id="2nd-1" name="2nd"><label for="2nd-1"></label>
-                <input type="radio" id="2nd-2" name="2nd"><label for="2nd-2"></label>
-                <input type="radio" id="2nd-3" name="2nd"><label for="2nd-3"></label>
-                <input type="radio" id="2nd-4" name="2nd"><label for="2nd-4"></label>
-                <input type="radio" id="2nd-5" name="2nd"><label for="2nd-5"></label>
+                <input type="radio" id="2nd-1" name="2nd">
+                <input type="radio" id="2nd-2" name="2nd">
+                <input type="radio" id="2nd-3" name="2nd">
+                <input type="radio" id="2nd-4" name="2nd">
+                <input type="radio" id="2nd-5" name="2nd">
             </div>
         </div>
         <!-- Slot for 3rd level spells -->
         <div class="slot">
             <label for="3rd-1">3rd:</label>
             <div class="radio-group">
-                <input type="radio" id="3rd-1" name="3rd"><label for="3rd-1"></label>
-                <input type="radio" id="3rd-2" name="3rd"><label for="3rd-2"></label>
-                <input type="radio" id="3rd-3" name="3rd"><label for="3rd-3"></label>
-                <input type="radio" id="3rd-4" name="3rd"><label for="3rd-4"></label>
-                <input type="radio" id="3rd-5" name="3rd"><label for="3rd-5"></label>
+                <input type="radio" id="3rd-1" name="3rd">
+                <input type="radio" id="3rd-2" name="3rd">
+                <input type="radio" id="3rd-3" name="3rd">
+                <input type="radio" id="3rd-4" name="3rd">
+                <input type="radio" id="3rd-5" name="3rd">
             </div>
         </div>
         <!-- Slot for 4th level spells -->
         <div class="slot">
             <label for="4th-1">4th:</label>
             <div class="radio-group">
-                <input type="radio" id="4th-1" name="4th"><label for="4th-1"></label>
-                <input type="radio" id="4th-2" name="4th"><label for="4th-2"></label>
-                <input type="radio" id="4th-3" name="4th"><label for="4th-3"></label>
-                <input type="radio" id="4th-4" name="4th"><label for="4th-4"></label>
-                <input type="radio" id="4th-5" name="4th"><label for="4th-5"></label>
+                <input type="radio" id="4th-1" name="4th">
+                <input type="radio" id="4th-2" name="4th">
+                <input type="radio" id="4th-3" name="4th">
+                <input type="radio" id="4th-4" name="4th">
+                <input type="radio" id="4th-5" name="4th">
             </div>
         </div>
         <!-- Slot for 5th level spells -->
         <div class="slot">
             <label for="5th-1">5th:</label>
             <div class="radio-group">
-                <input type="radio" id="5th-1" name="5th"><label for="5th-1"></label>
+                <input type="radio" id="5th-1" name="5th">
             </div>
         </div>
         <!-- Slot for 6th level spells -->
         <div class="slot">
             <label for="6th-1">6th:</label>
             <div class="radio-group">
-                <input type="radio" id="6th-1" name="6th"><label for="6th-1"></label>
+                <input type="radio" id="6th-1" name="6th">
             </div>
         </div>
         <!-- Slot for 7th level spells -->
         <div class="slot">
             <label for="7th-1">7th:</label>
             <div class="radio-group">
-                <input type="radio" id="7th-1" name="7th"><label for="7th-1"></label>
+                <input type="radio" id="7th-1" name="7th">
             </div>
         </div>
         <!-- Slot for 8th level spells -->
         <div class="slot">
             <label for="8th-1">8th:</label>
             <div class="radio-group">
-                <input type="radio" id="8th-1" name="8th"><label for="8th-1"></label>
+                <input type="radio" id="8th-1" name="8th">
             </div>
         </div>
     </div>
