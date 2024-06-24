@@ -10,11 +10,13 @@
             font-family: Arial, sans-serif; /* Font family for the text */
             background-color: #2e2e2e; /* Background color of the page */
             color: #ffffff; /* Text color */
-            margin: 20px; /* Margin around the page */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Padding around the container */
             display: flex; /* Use flexbox for alignment */
             justify-content: flex-start; /* Align to the left */
             align-items: flex-start; /* Align to the top */
-            min-height: 100vh; /* Minimum height to cover the full viewport height */
+            min-height: 100%; /* Ensure body takes full height */
+            box-sizing: border-box; /* Include padding in height calculation */
         }
         /* Style for the main container */
         .container {
