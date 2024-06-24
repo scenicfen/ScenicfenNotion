@@ -5,61 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spell Slots and Sorcery Points</title>
     <style>
+        /* Style for the entire page */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #2e2e2e;
-            color: #ffffff;
-            margin: 20px;
+            font-family: Arial, sans-serif; /* Font family for the text */
+            background-color: #2e2e2e; /* Background color of the page */
+            color: #ffffff; /* Text color */
+            margin: 20px; /* Margin around the page */
         }
+        /* Style for the main container */
         .container {
-            background-color: #333333;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 300px;
+            background-color: #333333; /* Background color of the container */
+            padding: 20px; /* Padding inside the container */
+            border-radius: 8px; /* Rounded corners */
+            max-width: 300px; /* Maximum width of the container */
         }
+        /* Style for each slot (row) */
         .slot {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Align items vertically centered */
+            margin-bottom: 10px; /* Space below each slot */
         }
+        /* Style for the labels (e.g., 1st, 2nd) */
         .slot label {
-            min-width: 50px;
+            min-width: 50px; /* Minimum width of the labels */
         }
+        /* Style for the checkbox group (container of checkboxes) */
         .checkbox-group {
-            display: flex;
-            gap: 5px;
+            display: flex; /* Use flexbox to align checkboxes horizontally */
+            gap: 5px; /* Space between each checkbox */
         }
+        /* Hide the default checkbox */
         .checkbox-group input {
-            display: none;
+            display: none; /* Hide the actual checkbox input */
         }
+        /* Style for the custom checkbox label */
         .checkbox-group label {
-            width: 20px;
-            height: 20px;
-            border: 1px solid #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            user-select: none;
+            width: 30px; /* Width of the custom checkbox */
+            height: 30px; /* Height of the custom checkbox */
+            border: 1px solid #ffffff; /* Border color and size */
+            display: flex; /* Use flexbox to center content */
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            user-select: none; /* Prevent text selection */
+            font-size: 20px; /* Font size for the "X" */
+            line-height: 30px; /* Line height to center "X" vertically */
         }
+        /* Style for the "X" inside the custom checkbox when checked */
         .checkbox-group input:checked + label::before {
-            content: "X";
-            color: #ffffff;
+            content: "X"; /* Content to display */
+            color: #ffffff; /* Color of the "X" */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Spell Slots and Sorcery Points</h2>
+        <!-- Slot for 1st level spells -->
         <div class="slot">
             <label for="1st-1">1st:</label>
             <div class="checkbox-group">
+                <!-- Custom checkbox with hidden input and label -->
                 <input type="checkbox" id="1st-1"><label for="1st-1"></label>
                 <input type="checkbox" id="1st-2"><label for="1st-2"></label>
                 <input type="checkbox" id="1st-3"><label for="1st-3"></label>
                 <input type="checkbox" id="1st-4"><label for="1st-4"></label>
             </div>
         </div>
+        <!-- Slot for 2nd level spells -->
         <div class="slot">
             <label for="2nd-1">2nd:</label>
             <div class="checkbox-group">
@@ -68,6 +81,7 @@
                 <input type="checkbox" id="2nd-3"><label for="2nd-3"></label>
             </div>
         </div>
+        <!-- Slot for 3rd level spells -->
         <div class="slot">
             <label for="3rd-1">3rd:</label>
             <div class="checkbox-group">
@@ -76,6 +90,7 @@
                 <input type="checkbox" id="3rd-3"><label for="3rd-3"></label>
             </div>
         </div>
+        <!-- Slot for 4th level spells -->
         <div class="slot">
             <label for="4th-1">4th:</label>
             <div class="checkbox-group">
@@ -84,6 +99,7 @@
                 <input type="checkbox" id="4th-3"><label for="4th-3"></label>
             </div>
         </div>
+        <!-- Slot for 5th level spells -->
         <div class="slot">
             <label for="5th-1">5th:</label>
             <div class="checkbox-group">
@@ -91,18 +107,21 @@
                 <input type="checkbox" id="5th-2"><label for="5th-2"></label>
             </div>
         </div>
+        <!-- Slot for 6th level spells -->
         <div class="slot">
             <label for="6th-1">6th:</label>
             <div class="checkbox-group">
                 <input type="checkbox" id="6th-1"><label for="6th-1"></label>
             </div>
         </div>
+        <!-- Slot for 7th level spells -->
         <div class="slot">
             <label for="7th-1">7th:</label>
             <div class="checkbox-group">
                 <input type="checkbox" id="7th-1"><label for="7th-1"></label>
             </div>
         </div>
+        <!-- Slot for 8th level spells -->
         <div class="slot">
             <label for="8th-1">8th:</label>
             <div class="checkbox-group">
