@@ -29,19 +29,19 @@
         .slot label {
             min-width: 50px; /* Minimum width of the labels */
         }
-        /* Style for the checkbox group (container of checkboxes) */
-        .checkbox-group {
-            display: flex; /* Use flexbox to align checkboxes horizontally */
-            gap: 5px; /* Space between each checkbox */
+        /* Style for the radio button group (container of radio buttons) */
+        .radio-group {
+            display: flex; /* Use flexbox to align radio buttons horizontally */
+            gap: 5px; /* Space between each radio button */
         }
-        /* Hide the default checkbox */
-        .checkbox-group input {
-            display: none; /* Hide the actual checkbox input */
+        /* Hide the default radio button */
+        .radio-group input {
+            display: none; /* Hide the actual radio button input */
         }
-        /* Style for the custom checkbox label */
-        .checkbox-group label {
-            width: 10px; /* Width of the custom checkbox */
-            height: 20px; /* Height of the custom checkbox */
+        /* Style for the custom radio button label */
+        .radio-group label {
+            width: 30px; /* Width of the custom radio button */
+            height: 30px; /* Height of the custom radio button */
             border: 1px solid #ffffff; /* Border color and size */
             display: flex; /* Use flexbox to center content */
             align-items: center; /* Center items vertically */
@@ -51,8 +51,8 @@
             font-size: 20px; /* Font size for the "X" */
             line-height: 30px; /* Line height to center "X" vertically */
         }
-        /* Style for the "X" inside the custom checkbox when checked */
-        .checkbox-group input:checked + label::before {
+        /* Style for the "X" inside the custom radio button when selected */
+        .radio-group input:checked + label::before {
             content: "X"; /* Content to display */
             color: #ffffff; /* Color of the "X" */
         }
@@ -64,68 +64,74 @@
         <!-- Slot for 1st level spells -->
         <div class="slot">
             <label for="1st-1">1st:</label>
-            <div class="checkbox-group">
-                <!-- Custom checkbox with hidden input and label -->
-                <input type="checkbox" id="1st-1"><label for="1st-1"></label>
-                <input type="checkbox" id="1st-2"><label for="1st-2"></label>
-                <input type="checkbox" id="1st-3"><label for="1st-3"></label>
-                <input type="checkbox" id="1st-4"><label for="1st-4"></label>
+            <div class="radio-group">
+                <!-- Custom radio button with hidden input and label -->
+                <input type="radio" id="1st-1" name="1st"><label for="1st-1"></label>
+                <input type="radio" id="1st-2" name="1st"><label for="1st-2"></label>
+                <input type="radio" id="1st-3" name="1st"><label for="1st-3"></label>
+                <input type="radio" id="1st-4" name="1st"><label for="1st-4"></label>
+                <input type="radio" id="1st-5" name="1st"><label for="1st-5"></label>
             </div>
         </div>
         <!-- Slot for 2nd level spells -->
         <div class="slot">
             <label for="2nd-1">2nd:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="2nd-1"><label for="2nd-1"></label>
-                <input type="checkbox" id="2nd-2"><label for="2nd-2"></label>
-                <input type="checkbox" id="2nd-3"><label for="2nd-3"></label>
+            <div class="radio-group">
+                <input type="radio" id="2nd-1" name="2nd"><label for="2nd-1"></label>
+                <input type="radio" id="2nd-2" name="2nd"><label for="2nd-2"></label>
+                <input type="radio" id="2nd-3" name="2nd"><label for="2nd-3"></label>
+                <input type="radio" id="2nd-4" name="2nd"><label for="2nd-4"></label>
+                <input type="radio" id="2nd-5" name="2nd"><label for="2nd-5"></label>
             </div>
         </div>
         <!-- Slot for 3rd level spells -->
         <div class="slot">
             <label for="3rd-1">3rd:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="3rd-1"><label for="3rd-1"></label>
-                <input type="checkbox" id="3rd-2"><label for="3rd-2"></label>
-                <input type="checkbox" id="3rd-3"><label for="3rd-3"></label>
+            <div class="radio-group">
+                <input type="radio" id="3rd-1" name="3rd"><label for="3rd-1"></label>
+                <input type="radio" id="3rd-2" name="3rd"><label for="3rd-2"></label>
+                <input type="radio" id="3rd-3" name="3rd"><label for="3rd-3"></label>
+                <input type="radio" id="3rd-4" name="3rd"><label for="3rd-4"></label>
+                <input type="radio" id="3rd-5" name="3rd"><label for="3rd-5"></label>
             </div>
         </div>
         <!-- Slot for 4th level spells -->
         <div class="slot">
             <label for="4th-1">4th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="4th-1"><label for="4th-1"></label>
-                <input type="checkbox" id="4th-2"><label for="4th-2"></label>
-                <input type="checkbox" id="4th-3"><label for="4th-3"></label>
+            <div class="radio-group">
+                <input type="radio" id="4th-1" name="4th"><label for="4th-1"></label>
+                <input type="radio" id="4th-2" name="4th"><label for="4th-2"></label>
+                <input type="radio" id="4th-3" name="4th"><label for="4th-3"></label>
+                <input type="radio" id="4th-4" name="4th"><label for="4th-4"></label>
+                <input type="radio" id="4th-5" name="4th"><label for="4th-5"></label>
             </div>
         </div>
         <!-- Slot for 5th level spells -->
         <div class="slot">
             <label for="5th-1">5th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="5th-1"><label for="5th-1"></label>
-                <input type="checkbox" id="5th-2"><label for="5th-2"></label>
+            <div class="radio-group">
+                <input type="radio" id="5th-1" name="5th"><label for="5th-1"></label>
             </div>
         </div>
         <!-- Slot for 6th level spells -->
         <div class="slot">
             <label for="6th-1">6th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="6th-1"><label for="6th-1"></label>
+            <div class="radio-group">
+                <input type="radio" id="6th-1" name="6th"><label for="6th-1"></label>
             </div>
         </div>
         <!-- Slot for 7th level spells -->
         <div class="slot">
             <label for="7th-1">7th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="7th-1"><label for="7th-1"></label>
+            <div class="radio-group">
+                <input type="radio" id="7th-1" name="7th"><label for="7th-1"></label>
             </div>
         </div>
         <!-- Slot for 8th level spells -->
         <div class="slot">
             <label for="8th-1">8th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="8th-1"><label for="8th-1"></label>
+            <div class="radio-group">
+                <input type="radio" id="8th-1" name="8th"><label for="8th-1"></label>
             </div>
         </div>
     </div>
