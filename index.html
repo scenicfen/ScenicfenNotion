@@ -5,139 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spell Slots</title>
     <style>
-        /* Style for the entire page */
-        body {
-            font-family: Arial, sans-serif; /* Font family for the text */
-            background-color: #2e2e2e; /* Background color of the page */
-            color: #ffffff; /* Text color */
-            margin: 0; /* Remove default margin */
-            padding: 20px; /* Padding around the container */
-            display: flex; /* Use flexbox for alignment */
-            justify-content: flex-start; /* Align to the left */
-            align-items: flex-start; /* Align to the top */
-            min-height: 100%; /* Ensure body takes full height */
-            box-sizing: border-box; /* Include padding in height calculation */
-            overflow: hidden; /* Hide scrollbars */
-        }
-        /* Style for the main container */
-        .container {
-            background-color: #333333; /* Background color of the container */
-            padding: 20px; /* Padding inside the container */
-            border-radius: 8px; /* Rounded corners */
-            max-width: 200px; /* Maximum width of the container */
-            width: 100%; /* Full width */
-            box-sizing: border-box; /* Include padding in width calculation */
-        }
-        /* Style for each slot (row) */
-        .slot {
-            display: flex; /* Use flexbox for alignment */
-            align-items: center; /* Align items vertically centered */
-            margin-bottom: 10px; /* Space below each slot */
-        }
-        /* Style for the labels (e.g., 1st, 2nd) */
-        .slot label {
-            min-width: 30px; /* Minimum width of the labels */
-            margin-right: 10px; /* Margin to the right of labels */
-        }
-        /* Style for the checkbox group (container of checkboxes) */
-        .checkbox-group {
-            display: flex; /* Use flexbox to align checkboxes horizontally */
-            gap: 5px; /* Space between each checkbox */
-        }
-        /* Hide the default checkbox */
-        .checkbox-group input {
-            appearance: none; /* Remove default checkbox appearance */
-            width: 20px; /* Width of the custom checkbox */
-            height: 20px; /* Height of the custom checkbox */
-            border: 2px solid #ffffff; /* Border color and size */
-            border-radius: 4px; /* Make it a square with rounded corners */
-            display: flex; /* Use flexbox to center content */
-            align-items: center; /* Center items vertically */
-            justify-content: center; /* Center items horizontally */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            position: relative; /* For the checkmark positioning */
-        }
-        /* Style for the checkmark inside the custom checkbox when checked */
-        .checkbox-group input:checked::before {
-            content: ""; /* Empty content for the checkmark */
-            width: 10px; /* Width of the checkmark */
-            height: 10px; /* Height of the checkmark */
-            border-radius: 2px; /* Rounded corners */
-            background-color: #ffffff; /* Color of the checkmark */
-            position: absolute; /* Position it inside the checkbox */
-        }
+        /* Your CSS styles here */
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Spell Slots</h2>
-        <!-- Slot for 1st level spells -->
         <div class="slot">
             <label for="1st-1">1st:</label>
             <div class="checkbox-group">
-                <!-- Custom checkbox with hidden input and label -->
                 <input type="checkbox" id="1st-1" name="1st-1">
                 <input type="checkbox" id="1st-2" name="1st-2">
                 <input type="checkbox" id="1st-3" name="1st-3">
                 <input type="checkbox" id="1st-4" name="1st-4">
             </div>
         </div>
-        <!-- Slot for 2nd level spells -->
-        <div class="slot">
-            <label for="2nd-1">2nd:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="2nd-1" name="2nd-1">
-                <input type="checkbox" id="2nd-2" name="2nd-2">
-                <input type="checkbox" id="2nd-3" name="2nd-3">
-            </div>
-        </div>
-        <!-- Slot for 3rd level spells -->
-        <div class="slot">
-            <label for="3rd-1">3rd:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="3rd-1" name="3rd-1">
-                <input type="checkbox" id="3rd-2" name="3rd-2">
-                <input type="checkbox" id="3rd-3" name="3rd-3">
-            </div>
-        </div>
-        <!-- Slot for 4th level spells -->
-        <div class="slot">
-            <label for="4th-1">4th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="4th-1" name="4th-1">
-                <input type="checkbox" id="4th-2" name="4th-2">
-                <input type="checkbox" id="4th-3" name="4th-3">
-            </div>
-        </div>
-        <!-- Slot for 5th level spells -->
-        <div class="slot">
-            <label for="5th-1">5th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="5th-1" name="5th-1">
-                <input type="checkbox" id="5th-2" name="5th-2">
-            </div>
-        </div>
-        <!-- Slot for 6th level spells -->
-        <div class="slot">
-            <label for="6th-1">6th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="6th-1" name="6th-1">
-            </div>
-        </div>
-        <!-- Slot for 7th level spells -->
-        <div class="slot">
-            <label for="7th-1">7th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="7th-1" name="7th-1">
-            </div>
-        </div>
-        <!-- Slot for 8th level spells -->
-        <div class="slot">
-            <label for="8th-1">8th:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="8th-1" name="8th-1">
-            </div>
-        </div>
+        <!-- Add more slots as needed -->
     </div>
+    <script>
+        const databaseId = 'your-database-id-here'; // Set this dynamically based on your needs
+
+        async function fetchCheckboxes() {
+            const response = await fetch('https://your-netlify-site.netlify.app/api/notion-api', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ databaseId, action: 'get' })
+            });
+            const data = await response.json();
+            data.forEach(item => {
+                document.getElementById('1st-1').checked = item.Checkbox1;
+                document.getElementById('1st-2').checked = item.Checkbox2;
+                // Set other checkboxes as needed
+            });
+        }
+
+        async function saveCheckboxes() {
+            const checkboxes = {
+                Checkbox1: document.getElementById('1st-1').checked,
+                Checkbox2: document.getElementById('1st-2').checked,
+                // Add other checkboxes as needed
+            };
+            await fetch('https://your-netlify-site.netlify.app/api/notion-api', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ databaseId, action: 'save', checkboxState: { id: 'your-page-id', checkboxes } })
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchCheckboxes);
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', saveCheckboxes);
+        });
+    </script>
 </body>
 </html>
